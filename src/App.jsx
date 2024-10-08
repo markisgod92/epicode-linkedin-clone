@@ -1,11 +1,14 @@
-import { useState } from "react";
-import "./App.css";
+import { useState } from 'react'
+import './App.css'
+import { BasicLayout } from './components/basic-layout/BasicLayout'
 import { SinglePost } from "./components/single-post/SinglePost";
+
 
 export const App = () => {
   return (
     <>
-      <SinglePost />
+    <BasicLayout />
+    <SinglePost />
     </>
-  );
-};
+  )
+}
