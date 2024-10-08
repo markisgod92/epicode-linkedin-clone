@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.post-container {
+  min-height: 100vh;
+}
+
+.single-post {
+  width: 600px;
+  height: 400px;
+}
+
+.single-post .title {
+  font-weight: 700;
+}
+
+.single-post .chain {
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+.single-post .post-date {
+  font-weight: 300;
+  font-size: 0.8rem;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: lightgray;
+}

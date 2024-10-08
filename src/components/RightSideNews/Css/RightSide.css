@@ -1,0 +1,12 @@
+.news-list h6 {
+    font-weight: bold;
+  }
+  
+  .news-list small {
+    color: gray;
+  }
+  
+  .news-list a {
+    display: block;
+    margin-top: 10px;
+  }
