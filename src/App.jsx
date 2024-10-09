@@ -6,6 +6,7 @@ import Navigation from "./components/navigation/Navigation";
 import RightSideNews from "./components/RightSideNews/RightSide.jsx";
 import Footer from "./components/basic-layout/right-sidebar-footer-block/Footer";
 import PostModalButton from "./components/create-post-modal/PostModalButton";
+import { MyProfileProvider } from "./context/MyProfileContext.jsx";
 
 export const App = () => {
 
@@ -13,6 +14,7 @@ export const App = () => {
 
   return (
     <>
+    <MyProfileProvider>
       <RightSideNews />
     <BasicLayout />
     <SinglePost />
@@ -20,6 +22,7 @@ export const App = () => {
      <PostModalButton/>
     <RightSideNews />
     <Footer />
+    </MyProfileProvider>
     </>
   );
 };
