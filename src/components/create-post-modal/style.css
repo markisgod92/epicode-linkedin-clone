@@ -1,0 +1,47 @@
+.postModalBody {
+    height: 250px;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+   
+}
+
+.modalArrowDownIcon {
+    margin-top: -35px;
+    color: grey;
+}
+
+.post-modal-exit-button {
+    border: none;
+    background-color: white;
+    margin-top: -30px;
+   
+}
+
+.modal-publish-btn {
+    background-color: rgb(235, 235, 235);
+    color: rgb(96, 96, 95);
+    border: none;
+}
+
+.modal-footer-icons:hover {
+    cursor: pointer;
+    
+}
+
+.profilePicBtn {
+    border: none;
+    color: black;
+    background-color: white;
+
+}
+.profilePicBtn:hover {
+    background-color: rgb(235, 235, 235);
+
+}
+
+.profilePicBtn img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
