@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import "./App.css";
 import { BasicLayout } from "./components/basic-layout/BasicLayout";
@@ -14,7 +15,8 @@ export const App = () => {
       <BasicLayout />
       <SinglePost />
       <Navigation />
-      <PostModalButton />
+          <PostModalButton />
+
       <RightSideNews />
       <Footer />
     </>
