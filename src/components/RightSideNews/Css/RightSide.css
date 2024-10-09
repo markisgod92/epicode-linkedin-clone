@@ -1,5 +1,6 @@
 .news-list h6 {
     font-weight: bold;
+    cursor: "pointer"
   }
   
   .news-list small {
@@ -10,3 +11,5 @@
     display: block;
     margin-top: 10px;
   }
+
+  
