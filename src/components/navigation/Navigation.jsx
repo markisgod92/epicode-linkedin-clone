@@ -105,7 +105,7 @@ const Navigation = () => {
           </Nav.Link>
 
           {/* Dropdown for User */}
-          <Dropdown alignRight className="ml-2">
+          <Dropdown className="ml-2">
             <Dropdown.Toggle
               variant="link"
               id="dropdown-user"
@@ -129,7 +129,7 @@ const Navigation = () => {
           </Dropdown>
 
           {/* Dropdown for Company */}
-          <Dropdown alignRight className="ml-3">
+          <Dropdown className="ml-3">
             <Dropdown.Toggle
               variant="link"
               id="dropdown-company"

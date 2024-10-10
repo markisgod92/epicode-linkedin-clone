@@ -1,29 +1,19 @@
 import { Button } from "react-bootstrap";
-import CreatePostModal from "./CreatePostModal";
-import { useContext, useState } from "react";
-import { MyProfileContext } from "../../context/MyProfileContext";
+import { CreatePostModal } from "./CreatePostModal";
+import { useState } from "react";
 
-const PostModalButton = () => {
-    const [showModal, setShowModal] = useState(false);
-  
- const toggleShowModal = () => setShowModal(!showModal)
+export const PostModalButton = () => {
+  const [showModal, setShowModal] = useState(false);
 
- const {myProfile} = useContext(MyProfileContext);
- console.log(myProfile);
-
-return (
+  const toggleShowModal = () => setShowModal(!showModal);
+  return (
     <>
-    
-<Button
-onClick={toggleShowModal}>
-  Apri il modale
-</Button>
-<CreatePostModal
-showModal={showModal}
-toggleShowModal = {toggleShowModal}
-setShowModal={setShowModal}/>
+      <Button onClick={toggleShowModal}>Apri il modale</Button>
+      <CreatePostModal
+        showModal={showModal}
+        toggleShowModal={toggleShowModal}
+        setShowModal={setShowModal}
+      />
     </>
-)
-    
-}
-export default PostModalButton
+  );
+};
