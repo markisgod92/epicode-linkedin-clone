@@ -7,10 +7,7 @@ on:
     branches:
       - main
 
-permissions:
-  actions: write 
-  contents: write
-  checks: write
+permissions: write-all
 
 jobs:
   ci:
