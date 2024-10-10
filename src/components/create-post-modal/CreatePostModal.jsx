@@ -1,4 +1,5 @@
-import { Button, Modal } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
+import avatarImg from "../../assets/avatar-5.jpg";
 import { useState } from "react";
 import "./style.css";
 import {
@@ -12,7 +13,11 @@ import {
   TimeOutline,
 } from "react-ionicons";
 
-const CreatePostModal = ({ showModal, setShowModal, toggleShowModal }) => {
+export const CreatePostModal = ({
+  showModal,
+  setShowModal,
+  toggleShowModal,
+}) => {
   const [post, setPost] = useState("");
   const [postModalLoading, setPostModalLoading] = useState("");
 
@@ -34,7 +39,7 @@ const CreatePostModal = ({ showModal, setShowModal, toggleShowModal }) => {
       <Modal.Header className="d-flex justify-content-between">
         <button className=" profilePicBtn d-flex align-items-center justify-content-center rounded-4 gap-2 p-3 m-0">
           <img
-            src="https://media.licdn.com/dms/image/v2/D4D35AQHxCK7oQwZtvw/profile-framedphoto-shrink_100_100/profile-framedphoto-shrink_100_100/0/1678382428171?e=1728928800&v=beta&t=ve6P7C_9f08gLlPPlPz_ln0zJqm8qBTztVVGELfeyxc"
+            src={avatarImg}
             alt="profile img"
             className="h-100 object-fit-cover"
           />
@@ -42,23 +47,26 @@ const CreatePostModal = ({ showModal, setShowModal, toggleShowModal }) => {
             <h5>Antonietta Andreozzi</h5>
             <span>Pubblica: Chiunque</span>
           </div>
-          <CaretDownOutline 
-          className = "modalArrowDownIcon"
-          color={"#60605f"}
+          <CaretDownOutline
+            className="modalArrowDownIcon"
+            color={"#60605f"}
             height="20px"
             width="20px"
           />
         </button>
-       
-        <a href="#" onClick={closeModal} className="post-modal-exit-button text-muted"> 
+
+        <a
+          href="#"
+          onClick={closeModal}
+          className="post-modal-exit-button text-muted"
+        >
           <CloseOutline
             className=""
             color={"#00000"}
             height="30px"
             width="30px"
           />
-          </a>
-        
+        </a>
       </Modal.Header>
 
       <Modal.Body>
@@ -73,68 +81,38 @@ const CreatePostModal = ({ showModal, setShowModal, toggleShowModal }) => {
         </textarea>
         <div className="d-flex flex-column gap-3">
           <div className="text-start justify-content-center p-3">
-           <a href="#" className="modal-footer-icons text-muted">
-            <HappyOutline
-              
-              color={"#00000"}
-              height="25px"
-              width="25px"
-             
-            />
+            <a href="#" className="modal-footer-icons text-muted">
+              <HappyOutline color={"#00000"} height="25px" width="25px" />
             </a>
           </div>
           <div className="d-flex align-items-center justify-content-start gap-5 p-3">
             <a href="#" className="modal-footer-icons text-muted">
-              <ImageOutline
-               
-                color={"#00000"}
-                height="25px"
-                width="25px"
-              />
-              </a>
-              
-              <a href="#" className="modal-footer-icons text-muted">
-                <CalendarOutline
-                  
-                  color={"#00000"}
-                  height="25px"
-                  width="25px"
-                />
-              </a>
-              <a href="#" className="modal-footer-icons text-muted">
-                <CloudyOutline
-                  
-                  color={"#00000"}
-                  height="25px"
-                  width="25px"
-                />
-              </a>
-              <a href="#" className="modal-footer-icons text-muted">
-              <AddOutline
-                
-                color={"#00000"}
-                height="25px"
-                width="25px"
-              />
+              <ImageOutline color={"#00000"} height="25px" width="25px" />
+            </a>
+
+            <a href="#" className="modal-footer-icons text-muted">
+              <CalendarOutline color={"#00000"} height="25px" width="25px" />
+            </a>
+            <a href="#" className="modal-footer-icons text-muted">
+              <CloudyOutline color={"#00000"} height="25px" width="25px" />
+            </a>
+            <a href="#" className="modal-footer-icons text-muted">
+              <AddOutline color={"#00000"} height="25px" width="25px" />
             </a>
           </div>
         </div>
       </Modal.Body>
       <Modal.Footer>
-        
-      <a href="#" className="modal-footer-icons text-muted">
-              <TimeOutline
-                
-                color={"#00000"}
-                height="25px"
-                width="25px"
-              />
-            </a>
-        <button className="modal-publish-btn rounded-pill px-3 py-1" onClick={closeModal}>Pubblica</button>
-        
+        <a href="#" className="modal-footer-icons text-muted">
+          <TimeOutline color={"#00000"} height="25px" width="25px" />
+        </a>
+        <button
+          className="modal-publish-btn rounded-pill px-3 py-1"
+          onClick={closeModal}
+        >
+          Pubblica
+        </button>
       </Modal.Footer>
     </Modal>
   );
 };
-
-export default CreatePostModal;

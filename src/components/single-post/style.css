@@ -1,15 +1,8 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .post-container {
   min-height: 100vh;
 }
 
 .single-post {
-  width: 600px;
   font-size: 0.9rem;
 }
 

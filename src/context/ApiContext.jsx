@@ -1,13 +1,12 @@
 import { createContext } from "react";
 
-export const ApiContext = createContext()
+export const ApiContext = createContext();
 
 export const ApiContextProvider = ({ children }) => {
+  const API_KEY = import.meta.env.VITE_API_KEY;
 
-    const API_KEY = import.meta.env.VITE_API_KEY
-    
-    const PROFILES_URL = 'https://striveschool-api.herokuapp.com/api/profile/' 
-    /*
+  const PROFILES_URL = "https://striveschool-api.herokuapp.com/api/profile/";
+  /*
     lista profili utente, 
     +userId per profilo specifico, 
     put x aggiornamento profilo utente (EXTRA)
@@ -16,9 +15,10 @@ export const ApiContextProvider = ({ children }) => {
     /:userId/picture sostituisce immagine del profilo
     /:userId/experience/:expId/picture aggiunge immagine ad experience
     */
-    const SELF_PROFILE_URL = 'https://striveschool-api.herokuapp.com/api/profile/me' //mio profilo
+  const SELF_PROFILE_URL =
+    "https://striveschool-api.herokuapp.com/api/profile/me"; //mio profilo
 
-    /* modello esperienza:
+  /* modello esperienza:
     {
         "role": "CTO",
         "company": "Strive School",
@@ -29,12 +29,5 @@ export const ApiContextProvider = ({ children }) => {
     }
     */
 
-
-    return (
-        <ApiContext.Provider
-            value={{  }}
-        >
-            { children }
-        </ApiContext.Provider>
-    )
-}
+  return <ApiContext.Provider value={{}}>{children}</ApiContext.Provider>;
+};

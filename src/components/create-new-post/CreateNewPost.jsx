@@ -1,15 +1,17 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
 import { Image, Calendar, FileText } from "lucide-react";
+import avatarImg from "../../assets/avatar-5.jpg";
 
-const PostBox = () => {
+export const CreateNewPost = () => {
   return (
-    <Row className="my-4">
-      <Col xs={12} md={6} className="m-auto">
-        <div className="post-box p-3 mb-3 shadow-sm rounded bg-light text-dark">
+    <Row>
+      <Col>
+        <div className="post-box p-3 mb-3 rounded shadow-sm bg-light text-dark">
           <div className="d-flex align-items-center mb-2">
             <img
-              src="https://via.placeholder.com/40"
+              src={avatarImg}
+              width={30}
               alt="profile"
               className="rounded-circle me-2"
             />
@@ -39,5 +41,3 @@ const PostBox = () => {
     </Row>
   );
 };
-
-export default PostBox;
