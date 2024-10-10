@@ -1,16 +1,9 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .post-container {
   min-height: 100vh;
 }
 
 .single-post {
-  width: 600px;
-  height: 400px;
+  font-size: 0.9rem;
 }
 
 .single-post .title {
@@ -22,13 +15,21 @@
   font-size: 0.9rem;
 }
 
-.single-post .post-date {
-  font-weight: 300;
-  font-size: 0.8rem;
+.single-post .user-action {
+  font-weight: 600;
+}
+
+.single-post .translation {
+  font-weight: 600;
 }
 
 .divider {
   width: 100%;
   height: 1px;
   background-color: lightgray;
+}
+
+.input-icons {
+  position: absolute;
+  right: 0.75rem;
 }

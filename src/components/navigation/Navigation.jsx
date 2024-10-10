@@ -118,6 +118,8 @@ const Navigation = () => {
           </Nav.Link>
 
           <Dropdown alignRight className="ml-2">
+          {/* Dropdown for User */}
+          <Dropdown className="ml-2">
             <Dropdown.Toggle
               variant="link"
               id="dropdown-user"
@@ -247,6 +249,8 @@ const Navigation = () => {
           ></div>
 
           <Dropdown alignRight className="ml-3">
+          {/* Dropdown for Company */}
+          <Dropdown className="ml-3">
             <Dropdown.Toggle
               variant="link"
               id="dropdown-company"
@@ -334,7 +338,7 @@ const Navigation = () => {
         </Nav>
       </Container>
     </Navbar>
-  );
+  )
 };
 
 export default Navigation;
