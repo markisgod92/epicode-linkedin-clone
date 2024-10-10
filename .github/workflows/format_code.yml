@@ -39,8 +39,8 @@ jobs:
       - name: Install
         run: ./.github/bin/ci_install.sh
 
-      - name: Lint
-        run: ./.github/bin/ci_lint.sh || { echo "Lint failed"; exit 1; }
+      - name: Install
+        run: ./.github/bin/ci_format.sh
 
       - name: Commit and push formatted code
         if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/main')
