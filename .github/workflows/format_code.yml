@@ -6,8 +6,10 @@ on:
   pull_request:
     branches:
       - main
+
 permissions:
   actions: write 
+  
 jobs:
   ci:
     name: CI - Check and format code
