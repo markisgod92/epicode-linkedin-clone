@@ -1,0 +1,10 @@
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: #444 !important; /* Sfondo scuro */
+  color: white !important; /* Testo bianco */
+}
+
+.dropdown-menu {
+  background-color: #444 !important; /* Assicurati che tutto il menu abbia uno sfondo scuro */
+}
+
