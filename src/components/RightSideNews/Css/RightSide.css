@@ -12,4 +12,17 @@
     margin-top: 10px;
   }
 
-  
+h5 {
+    color: rgb(154, 152, 152);
+}  
+
+img {
+    height: 43px;
+    width: 43px;
+}
+
+.ciao {
+    height: 43px;
+    display: grid;
+    gap: 4px;
+}
