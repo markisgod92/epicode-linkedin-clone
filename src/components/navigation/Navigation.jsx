@@ -6,7 +6,7 @@ import {
   Dropdown,
   Button,
 } from "react-bootstrap";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import {
   Search,
   Home,
@@ -17,9 +17,11 @@ import {
   Grid,
 } from "lucide-react";
 import "./Navigation.css";
+import { MyProfileContext } from "../../context/MyProfileContext";
 
 const Navigation = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const { myProfile, myProfileError } = useContext(MyProfileContext);
 
   const handleInputChange = (e) => {
     setSearchTerm(e.target.value);
@@ -247,9 +249,12 @@ const Navigation = () => {
             }}
           ></div>
 
-          <Dropdown alignRight className="ml-3">
-            {/* Dropdown for Company */}
-            <Dropdown className="ml-3">
+          <div className="d-flex align-items-center">
+            <Dropdown
+              alignRight
+              className="ml-3 d-flex flex-column align-items-center"
+            >
+              {/* Dropdown for Company */}
               <Dropdown.Toggle
                 variant="link"
                 id="dropdown-company"
@@ -259,6 +264,7 @@ const Navigation = () => {
                 <Grid size={20} />
                 <small style={{ fontSize: "12px" }}>Per le aziende</small>
               </Dropdown.Toggle>
+
               <Dropdown.Menu className="p-3 bg-dark">
                 <h6
                   className="text-light text-right"
@@ -295,7 +301,7 @@ const Navigation = () => {
                         className="text-light mb-0"
                         style={{ fontSize: "12px" }}
                       >
-                        ott 2022 - Pres ott 2022 - Presente
+                        ott 2022 - Presente
                       </p>
                       <small
                         className="text-light"
@@ -358,7 +364,7 @@ const Navigation = () => {
               <br />
               <strong style={{ fontSize: "12px" }}>0 EUR</strong>
             </div>
-          </Dropdown>
+          </div>
         </Nav>
       </Container>
     </Navbar>

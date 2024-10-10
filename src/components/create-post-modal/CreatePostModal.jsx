@@ -2,16 +2,6 @@ import { Modal } from "react-bootstrap";
 import avatarImg from "../../assets/avatar-5.jpg";
 import { useState } from "react";
 import "./style.css";
-import {
-  AddOutline,
-  CalendarOutline,
-  CaretDownOutline,
-  CloseOutline,
-  CloudyOutline,
-  HappyOutline,
-  ImageOutline,
-  TimeOutline,
-} from "react-ionicons";
 
 export const CreatePostModal = ({
   showModal,
@@ -47,26 +37,13 @@ export const CreatePostModal = ({
             <h5>Antonietta Andreozzi</h5>
             <span>Pubblica: Chiunque</span>
           </div>
-          <CaretDownOutline
-            className="modalArrowDownIcon"
-            color={"#60605f"}
-            height="20px"
-            width="20px"
-          />
         </button>
 
         <a
           href="#"
           onClick={closeModal}
           className="post-modal-exit-button text-muted"
-        >
-          <CloseOutline
-            className=""
-            color={"#00000"}
-            height="30px"
-            width="30px"
-          />
-        </a>
+        ></a>
       </Modal.Header>
 
       <Modal.Body>
@@ -81,31 +58,19 @@ export const CreatePostModal = ({
         </textarea>
         <div className="d-flex flex-column gap-3">
           <div className="text-start justify-content-center p-3">
-            <a href="#" className="modal-footer-icons text-muted">
-              <HappyOutline color={"#00000"} height="25px" width="25px" />
-            </a>
+            <a href="#" className="modal-footer-icons text-muted"></a>
           </div>
           <div className="d-flex align-items-center justify-content-start gap-5 p-3">
-            <a href="#" className="modal-footer-icons text-muted">
-              <ImageOutline color={"#00000"} height="25px" width="25px" />
-            </a>
+            <a href="#" className="modal-footer-icons text-muted"></a>
 
-            <a href="#" className="modal-footer-icons text-muted">
-              <CalendarOutline color={"#00000"} height="25px" width="25px" />
-            </a>
-            <a href="#" className="modal-footer-icons text-muted">
-              <CloudyOutline color={"#00000"} height="25px" width="25px" />
-            </a>
-            <a href="#" className="modal-footer-icons text-muted">
-              <AddOutline color={"#00000"} height="25px" width="25px" />
-            </a>
+            <a href="#" className="modal-footer-icons text-muted"></a>
+            <a href="#" className="modal-footer-icons text-muted"></a>
+            <a href="#" className="modal-footer-icons text-muted"></a>
           </div>
         </div>
       </Modal.Body>
       <Modal.Footer>
-        <a href="#" className="modal-footer-icons text-muted">
-          <TimeOutline color={"#00000"} height="25px" width="25px" />
-        </a>
+        <a href="#" className="modal-footer-icons text-muted"></a>
         <button
           className="modal-publish-btn rounded-pill px-3 py-1"
           onClick={closeModal}
