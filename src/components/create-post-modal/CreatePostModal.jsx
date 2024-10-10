@@ -1,17 +1,17 @@
 import { Modal } from "react-bootstrap";
 import avatarImg from "../../assets/avatar-5.jpg";
 import { useState } from "react";
-import "./style.css";
 import {
-  AddOutline,
-  CalendarOutline,
-  CaretDownOutline,
-  CloseOutline,
-  CloudyOutline,
-  HappyOutline,
-  ImageOutline,
-  TimeOutline,
-} from "react-ionicons";
+  Smile,
+  Image,
+  Calendar,
+  Cloud,
+  Plus,
+  Clock,
+  ChevronDown,
+  X,
+} from "lucide-react"; 
+import "./style.css";
 
 export const CreatePostModal = ({
   showModal,
@@ -37,7 +37,7 @@ export const CreatePostModal = ({
       centered
     >
       <Modal.Header className="d-flex justify-content-between">
-        <button className=" profilePicBtn d-flex align-items-center justify-content-center rounded-4 gap-2 p-3 m-0">
+        <button className="profilePicBtn d-flex align-items-center justify-content-center rounded-4 gap-2 p-3 m-0">
           <img
             src={avatarImg}
             alt="profile img"
@@ -47,12 +47,7 @@ export const CreatePostModal = ({
             <h5>Antonietta Andreozzi</h5>
             <span>Pubblica: Chiunque</span>
           </div>
-          <CaretDownOutline
-            className="modalArrowDownIcon"
-            color={"#60605f"}
-            height="20px"
-            width="20px"
-          />
+          <ChevronDown className="modalArrowDownIcon" color="#60605f" size={20} />
         </button>
 
         <a
@@ -60,12 +55,7 @@ export const CreatePostModal = ({
           onClick={closeModal}
           className="post-modal-exit-button text-muted"
         >
-          <CloseOutline
-            className=""
-            color={"#00000"}
-            height="30px"
-            width="30px"
-          />
+          <X className="" color="#60605f" size={30} />
         </a>
       </Modal.Header>
 
@@ -82,29 +72,29 @@ export const CreatePostModal = ({
         <div className="d-flex flex-column gap-3">
           <div className="text-start justify-content-center p-3">
             <a href="#" className="modal-footer-icons text-muted">
-              <HappyOutline color={"#00000"} height="25px" width="25px" />
+              <Smile color="#60605f" size={25} />
             </a>
           </div>
           <div className="d-flex align-items-center justify-content-start gap-5 p-3">
             <a href="#" className="modal-footer-icons text-muted">
-              <ImageOutline color={"#00000"} height="25px" width="25px" />
+              <Image color="#60605f" size={25} />
             </a>
 
             <a href="#" className="modal-footer-icons text-muted">
-              <CalendarOutline color={"#00000"} height="25px" width="25px" />
+              <Calendar color="#60605f" size={25} />
             </a>
             <a href="#" className="modal-footer-icons text-muted">
-              <CloudyOutline color={"#00000"} height="25px" width="25px" />
+              <Cloud color="#60605f" size={25} />
             </a>
             <a href="#" className="modal-footer-icons text-muted">
-              <AddOutline color={"#00000"} height="25px" width="25px" />
+              <Plus color="#60605f" size={25} />
             </a>
           </div>
         </div>
       </Modal.Body>
       <Modal.Footer>
         <a href="#" className="modal-footer-icons text-muted">
-          <TimeOutline color={"#00000"} height="25px" width="25px" />
+          <Clock color="#60605f" size={25} />
         </a>
         <button
           className="modal-publish-btn rounded-pill px-3 py-1"
