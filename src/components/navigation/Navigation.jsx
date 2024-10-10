@@ -117,7 +117,6 @@ const Navigation = () => {
             </span>
           </Nav.Link>
 
-          <Dropdown alignRight className="ml-2">
           {/* Dropdown for User */}
           <Dropdown className="ml-2">
             <Dropdown.Toggle
@@ -249,96 +248,121 @@ const Navigation = () => {
           ></div>
 
           <Dropdown alignRight className="ml-3">
-          {/* Dropdown for Company */}
-          <Dropdown className="ml-3">
-            <Dropdown.Toggle
-              variant="link"
-              id="dropdown-company"
-              className="text-light d-flex flex-column align-items-center"
-              style={{ padding: "0" }}
-            >
-              <Grid size={20} />
-              <small style={{ fontSize: "12px" }}>Per le aziende</small>
-            </Dropdown.Toggle>
-            <Dropdown.Menu className="p-3 bg-dark">
-              <h6
-                className="text-light text-right"
-                style={{ fontSize: "14px" }}
+            {/* Dropdown for Company */}
+            <Dropdown className="ml-3">
+              <Dropdown.Toggle
+                variant="link"
+                id="dropdown-company"
+                className="text-light d-flex flex-column align-items-center"
+                style={{ padding: "0" }}
               >
-                Esperienze
-              </h6>
-              <Dropdown.Divider className="bg-light" />
+                <Grid size={20} />
+                <small style={{ fontSize: "12px" }}>Per le aziende</small>
+              </Dropdown.Toggle>
+              <Dropdown.Menu className="p-3 bg-dark">
+                <h6
+                  className="text-light text-right"
+                  style={{ fontSize: "14px" }}
+                >
+                  Esperienze
+                </h6>
+                <Dropdown.Divider className="bg-light" />
 
-              <Dropdown.Item href="#">
-                <div className="d-flex align-items-start">
-                  <img
-                    src="https://via.placeholder.com/40"
-                    alt="company-logo"
-                    className="mr-2 rounded-circle"
-                    width="40"
-                    height="40"
-                    style={{ marginRight: "10px" }}
-                  />
-                  <div>
-                    <strong className="text-light" style={{ fontSize: "14px" }}>
-                      Full Stack Developer
-                    </strong>
-                    <p className="text-light mb-0" style={{ fontSize: "12px" }}>
-                      Fifty Deg • Tempo pieno
-                    </p>
-                    <p className="text-light mb-0" style={{ fontSize: "12px" }}>
-                      ott 2022 - Pres ott 2022 - Presente
-                    </p>
-                    <small className="text-light" style={{ fontSize: "12px" }}>
-                      git, typescript, +20 competenze
-                    </small>
+                <Dropdown.Item href="#">
+                  <div className="d-flex align-items-start">
+                    <img
+                      src="https://via.placeholder.com/40"
+                      alt="company-logo"
+                      className="mr-2 rounded-circle"
+                      width="40"
+                      height="40"
+                      style={{ marginRight: "10px" }}
+                    />
+                    <div>
+                      <strong
+                        className="text-light"
+                        style={{ fontSize: "14px" }}
+                      >
+                        Full Stack Developer
+                      </strong>
+                      <p
+                        className="text-light mb-0"
+                        style={{ fontSize: "12px" }}
+                      >
+                        Fifty Deg • Tempo pieno
+                      </p>
+                      <p
+                        className="text-light mb-0"
+                        style={{ fontSize: "12px" }}
+                      >
+                        ott 2022 - Pres ott 2022 - Presente
+                      </p>
+                      <small
+                        className="text-light"
+                        style={{ fontSize: "12px" }}
+                      >
+                        git, typescript, +20 competenze
+                      </small>
+                    </div>
                   </div>
-                </div>
-              </Dropdown.Item>
+                </Dropdown.Item>
 
-              <Dropdown.Divider className="bg-light" />
+                <Dropdown.Divider className="bg-light" />
 
-              <Dropdown.Item href="#">
-                <div className="d-flex align-items-start">
-                  <img
-                    src="https://via.placeholder.com/40"
-                    alt="company-logo"
-                    className="mr-2 rounded-circle"
-                    width="40"
-                    height="40"
-                    style={{ marginRight: "10px" }}
-                  />
-                  <div>
-                    <strong className="text-light" style={{ fontSize: "14px" }}>
-                      Frontend Developer & Language Coordinator
-                    </strong>
-                    <p className="text-light mb-0" style={{ fontSize: "12px" }}>
-                      Flarum • Autonomo
-                    </p>
-                    <p className="text-light mb-0" style={{ fontSize: "12px" }}>
-                      set 2020 - Presente
-                    </p>
-                    <small className="text-light" style={{ fontSize: "12px" }}>
-                      frontend, git, +6 competenze
-                    </small>
+                <Dropdown.Item href="#">
+                  <div className="d-flex align-items-start">
+                    <img
+                      src="https://via.placeholder.com/40"
+                      alt="company-logo"
+                      className="mr-2 rounded-circle"
+                      width="40"
+                      height="40"
+                      style={{ marginRight: "10px" }}
+                    />
+                    <div>
+                      <strong
+                        className="text-light"
+                        style={{ fontSize: "14px" }}
+                      >
+                        Frontend Developer & Language Coordinator
+                      </strong>
+                      <p
+                        className="text-light mb-0"
+                        style={{ fontSize: "12px" }}
+                      >
+                        Flarum • Autonomo
+                      </p>
+                      <p
+                        className="text-light mb-0"
+                        style={{ fontSize: "12px" }}
+                      >
+                        set 2020 - Presente
+                      </p>
+                      <small
+                        className="text-light"
+                        style={{ fontSize: "12px" }}
+                      >
+                        frontend, git, +6 competenze
+                      </small>
+                    </div>
                   </div>
-                </div>
-              </Dropdown.Item>
-            </Dropdown.Menu>
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+
+            <div
+              className="text-warning text-center mx-3"
+              style={{ fontSize: "10px", lineHeight: "12px" }}
+            >
+              <small style={{ fontSize: "10px" }}>Prova Premium per</small>
+              <br />
+              <strong style={{ fontSize: "12px" }}>0 EUR</strong>
+            </div>
           </Dropdown>
-
-          <div
-            className="text-warning text-center mx-3"
-            style={{ fontSize: "10px", lineHeight: "12px" }}
-          >
-            <small style={{ fontSize: "10px" }}>Prova Premium per</small>
-            <br />
-            <strong style={{ fontSize: "12px" }}>0 EUR</strong>
-          </div>
         </Nav>
       </Container>
     </Navbar>
-  )
+  );
 };
 
 export default Navigation;
