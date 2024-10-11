@@ -1,11 +1,10 @@
-import { useState } from "react";
 import "./App.css";
-import LinkedInAd from "./components/basic-layout/DevelopRightSideBlock";
+import { BasicLayout } from "./layouts/BasicLayout.jsx";
 
 export const App = () => {
   return (
     <>
-      <LinkedInAd />
+      <BasicLayout />
     </>
   );
 };
