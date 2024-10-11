@@ -2,33 +2,42 @@ import { Row, Col } from "react-bootstrap";
 import bannerImg from "../../assets/hero-img.webp";
 import profileImg from "../../assets/avatar-5.jpg";
 import "./style.css";
+import { useContext } from "react";
+import { MyProfileContext } from "../../context/MyProfileContext";
 
 export const LeftSideBarMain = () => {
+  const { myProfile } = useContext(MyProfileContext)
   return (
-    <Row>
-      <Col>
-        <div className="rounded bg-light overflow-hidden">
-          <div
-            id="imagesContainer"
-            className="d-flex flex-column align-items-start"
-          >
-            <img id="banner" src={bannerImg} />
-            <img id="avatarPic" src={profileImg} />
-          </div>
-          <div className="p-3 pt-5">
-            <h3>Giuseppe Raso</h3>
-            <p>Hi, i am a full stack web developer.</p>
-            <button className="p-1 border rounded-5 w-100">
+    <>
+      {myProfile && (
+        <Row>
+          <Col>
+            <div className="rounded bg-light overflow-hidden">
               <div
-                id="newExperienceButton"
-                className="d-flex justify-content-center align-items-center gap-2 px-2 rounded-5"
+                id="imagesContainer"
+                className="d-flex flex-column align-items-start"
               >
-                <span id="plusIcon">&#43;</span>New Experience
+                <img id="banner" src={myProfile.image} />
+                <img id="avatarPic" src={myProfile.image} />
               </div>
-            </button>
-          </div>
-        </div>
-      </Col>
-    </Row>
+              <div className="p-3 pt-5">
+                <h3>{myProfile.name} {myProfile.surname}</h3>
+                <p>{myProfile.title}</p>
+                <button className="p-1 border rounded-5 w-100">
+                  <div
+                    id="newExperienceButton"
+                    className="d-flex justify-content-center align-items-center gap-2 px-2 rounded-5"
+                  >
+                    <span id="plusIcon">&#43;</span>
+                    <span>New Experience</span>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </Col>
+        </Row>
+      )}
+    </>
+
   );
 };

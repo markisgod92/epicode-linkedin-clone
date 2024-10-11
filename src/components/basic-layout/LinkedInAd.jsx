@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Card, Button } from "react-bootstrap";
 import { Linkedin, MoreHorizontal } from "lucide-react";
+import {MyProfileContext} from '../../context/MyProfileContext'
 
 const LinkedInAd = () => {
+  const { myProfile, myProfileError, myProfileLoading } = useContext(MyProfileContext);
+
   return (
     <Card
       style={{
-        width: "18rem",
-        backgroundColor: "#1c1e21",
-        color: "#fff",
+        width: "100%",
         borderRadius: "10px",
       }}
     >
@@ -32,10 +33,17 @@ const LinkedInAd = () => {
             marginBottom: "10px",
             fontSize: "14px",
             textAlign: "center",
-            whiteSpace: "nowrap",
+            whiteSpace: "wrap",
           }}
         >
-          Marco, boost your job search with Premium
+          {/* Condizionale per gestire il caricamento o gli errori */}
+          {myProfileLoading ? (
+            "Caricamento..."
+          ) : myProfileError ? (
+            "Errore nel caricamento"
+          ) : (
+            `${myProfile?.name}, boost your job search with Premium`
+          )}
         </div>
 
         <div
@@ -46,11 +54,19 @@ const LinkedInAd = () => {
             marginBottom: "10px",
           }}
         >
-          <img
-            src="https://via.placeholder.com/50"
-            alt="Profile"
-            style={{ borderRadius: "50%", marginRight: "10px" }}
-          />
+          {myProfileLoading ? (
+            <img
+              src="https://via.placeholder.com/50"
+              alt="Profile"
+              style={{ borderRadius: "50%", marginRight: "10px" }}
+            />
+          ) : (
+            <img
+              src={myProfile?.image || "https://via.placeholder.com/50"}
+              alt="Profile"
+              style={{ borderRadius: "50%", marginRight: "10px", width: '50px', height: '50px' }}
+            />
+          )}
           <Linkedin size={40} color="#0e76a8" />
         </div>
 

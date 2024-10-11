@@ -14,7 +14,7 @@ import {
   X,
 } from "lucide-react";
 
-export const SinglePost = ({}) => {
+export const SinglePost = ({postData}) => {
   const userData = {
     postImg: "../../assets/avatar-2.jpg",
     name: "Francesca",
@@ -28,9 +28,9 @@ export const SinglePost = ({}) => {
   };
 
   const suggestedAnswers = [
-    `Congratulazioni ${userData.name}!`,
+    `Congratulazioni ${postData.user.name}!`,
     `Ti auguro il meglio!`,
-    `Ben fatto, ${userData.name}`,
+    `Ben fatto, ${postData.user.name}`,
   ];
 
   return (
@@ -42,15 +42,15 @@ export const SinglePost = ({}) => {
             <div>
               <div className="d-flex gap-3 justify-content-between">
                 <div className="flex-grow-0">
-                  <img src={postImg} alt="" width={60} className="rounded-5" />
+                  <img src={postData.user.image} alt="" width={60} className="rounded-5" />
                 </div>
                 <div className="d-flex flex-column flex-grow-1">
                   <span className="title">
-                    {userData.name} {userData.surname} •{" "}
+                    {postData.user.name} {postData.user.surname} •{" "}
                     <span className="chain">{userData.chain}</span>
                   </span>
                   <span>--</span>
-                  <span className="post-date">{userData.date}</span>
+                  <span className="post-date">{postData.user.updatedAt}</span>
                 </div>
                 <div className="flex-grow-0 d-flex gap-3 align-items-start">
                   <Ellipsis />
@@ -62,14 +62,14 @@ export const SinglePost = ({}) => {
             <div>
               <div className="d-flex flex-column gap-2 py-2">
                 <div>
-                  <span className="post-text">{userData.postText}</span>
+                  <span className="post-text">{postData.post.body}</span>
                 </div>
                 <div>
                   <span className="translation">Mostra traduzione</span>
                 </div>
                 <div className="d-flex justify-content-between">
-                  <span>♥️ {userData.postLikes}</span>
-                  <span>{userData.postComments} commenti</span>
+                  <span>♥️ {postData.post.reactions.likes}</span>
+                  <span>{postData.post.views} commenti</span>
                 </div>
               </div>
             </div>

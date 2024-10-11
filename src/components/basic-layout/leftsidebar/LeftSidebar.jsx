@@ -2,7 +2,6 @@ import { Container, Row, Col, Card, ListGroup, Dropdown } from "react-bootstrap"
 
 const LeftSidebar = () => {
     return (
-        <Container fluid>
             <Row>
                 <Col>
                     <Card className="mb-3">
@@ -27,7 +26,6 @@ const LeftSidebar = () => {
                     </Card>
                 </Col>
             </Row>
-        </Container>
     )
 }
 
