@@ -1,9 +1,7 @@
 import { Row, Col } from "react-bootstrap";
-import bannerImg from "../../assets/hero-img.webp";
-import profileImg from "../../assets/avatar-5.jpg";
-import "./style.css";
 import { useContext } from "react";
 import { MyProfileContext } from "../../context/MyProfileContext";
+import './style.css'
 
 export const LeftSideBarMain = () => {
   const { myProfile } = useContext(MyProfileContext)

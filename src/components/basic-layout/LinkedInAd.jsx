@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Card, Button } from "react-bootstrap";
 import { Linkedin, MoreHorizontal } from "lucide-react";
-import {MyProfileContext} from '../../context/MyProfileContext'
+import { MyProfileContext } from '../../context/MyProfileContext'
 
 const LinkedInAd = () => {
   const { myProfile, myProfileError, myProfileLoading } = useContext(MyProfileContext);
@@ -16,13 +16,19 @@ const LinkedInAd = () => {
       <Card.Body>
         <div
           style={{
-            display: "flex",
-            justifyContent: "flex-end",
-            alignItems: "center",
-            marginBottom: "10px",
+            display: 'flex',
+            justifyContent: 'flex-end',
+            alignItems: 'center',
+            marginBottom: '10px',
           }}
         >
-          <span style={{ fontSize: "12px", color: "#aaa", marginRight: "5px" }}>
+          <span
+            style={{
+              fontSize: '12px',
+              color: '#aaa',
+              marginRight: '5px',
+            }}
+          >
             Annuncio
           </span>
           <MoreHorizontal color="#aaa" />
@@ -70,21 +76,24 @@ const LinkedInAd = () => {
           <Linkedin size={40} color="#0e76a8" />
         </div>
 
-        <Card.Text style={{ textAlign: "center" }}>
+        <Card.Text style={{ textAlign: 'center' }}>
           See who’s viewed your profile in the last 90 days.
         </Card.Text>
 
-        <div style={{ display: "flex", justifyContent: "center" }}>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
           <Button
             variant="primary"
-            style={{ backgroundColor: "#0073b1", borderColor: "#0073b1" }}
+            style={{
+              backgroundColor: '#0073b1',
+              borderColor: '#0073b1',
+            }}
           >
             Try for free!
           </Button>
         </div>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
-export default LinkedInAd;
+export default LinkedInAd

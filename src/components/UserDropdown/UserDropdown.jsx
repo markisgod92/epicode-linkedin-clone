@@ -127,4 +127,4 @@ const UserDropdown = () => {
   );
 };
 
-export default UserDropdown;
+export default UserDropdown

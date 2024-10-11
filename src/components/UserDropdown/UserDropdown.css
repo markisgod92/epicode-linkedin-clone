@@ -1,10 +1,9 @@
 .dropdown-item:hover,
 .dropdown-item:focus {
-  background-color: #444 !important;
-  color: white !important;
+    background-color: #444 !important;
+    color: white !important;
 }
 
-
 .dropdown-menu {
-  background-color: #343a40 !important;
+    background-color: #343a40 !important;
 }

@@ -1,18 +1,17 @@
-import "./style.css";
-import avatarImg from "../../assets/avatar-5.jpg";
-import postImg from "../../assets/avatar-2.jpg";
-import { Row, Col, Button, Form } from "react-bootstrap";
+import './style.css'
+import avatarImg from '../../assets/avatar-5.jpg'
+import { Row, Col, Button, Form } from 'react-bootstrap'
 import {
-  ChevronDown,
-  Ellipsis,
-  Image,
-  MessageSquareText,
-  Repeat,
-  Send,
-  Smile,
-  ThumbsUp,
-  X,
-} from "lucide-react";
+    ChevronDown,
+    Ellipsis,
+    Image,
+    MessageSquareText,
+    Repeat,
+    Send,
+    Smile,
+    ThumbsUp,
+    X,
+} from 'lucide-react'
 
 export const SinglePost = ({postData}) => {
   const userData = {
