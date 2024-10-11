@@ -1,15 +1,14 @@
-{
-  /*import { Container, Form, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Container, Form, Nav, Navbar, Dropdown } from "react-bootstrap";
 import { useState } from "react";
 import {
-  LogoLinkedin,
-  HomeOutline,
-  PeopleOutline,
-  BriefcaseOutline,
-  ChatbubbleEllipsesOutline,
-  NotificationsOutline,
-  AppsOutline,
-} from "react-ionicons";
+  Search,
+  Home,
+  Users,
+  Briefcase,
+  MessageSquare,
+  Bell,
+  Grid,
+} from "lucide-react";
 
 const Navigation = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -20,88 +19,142 @@ const Navigation = () => {
 
   return (
     <Navbar
-      data-testid="nav"
       bg="dark"
       variant="dark"
-      className="d-flex justify-content-between sticky-top"
+      expand="lg"
+      className="px-3 d-flex justify-content-center"
     >
-      <Container>
-        <Navbar.Brand href="/">
-          <LogoLinkedin
-            color="#ffffff"
-            title="LinkedIn"
-            height="30px"
-            width="30px"
-            data-testid="linkedin-icon"
+      <Container
+        className="d-flex justify-content-between align-items-center"
+        style={{ maxWidth: "800px" }}
+      >
+        {/* LinkedIn Icon */}
+        <Navbar.Brand href="#" className="d-flex align-items-center">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
+            width="30"
+            height="30"
+            className="d-inline-block align-top"
+            alt="LinkedIn"
           />
         </Navbar.Brand>
 
-        <Form className="d-inline-flex flex-grow-1 mx-1">
+        {/* Search Form */}
+        <Form
+          inline="true"
+          className="d-flex align-items-center mx-3"
+          style={{ maxWidth: "300px" }}
+        >
           <Form.Control
             type="text"
             placeholder="Cerca"
-            value={searchTerm}
-            onChange={handleSearchChange}
+            className="ml-2"
             style={{
-              backgroundColor: "#333",
-              borderColor: "#666",
-              color: "#fff",
-              width: "75%",
+              border: "none",
+              background: "grey",
+              color: "white",
+              borderBottom: "1px solid #ccc",
+              width: "100%",
             }}
           />
+          <Search className="text-muted text-dark" size={18} />
         </Form>
 
-        <Nav className="ms-auto d-flex align-items-center">
-          <Nav.Link href="#home" className="text-center mx-2">
-            <HomeOutline color="#ffffff" height="24px" width="24px" />
-            <div>Home</div>
-          </Nav.Link>
-          <Nav.Link href="#network" className="text-center mx-2">
-            <PeopleOutline color="#ffffff" height="24px" width="24px" />
-            <div>Rete</div>
-          </Nav.Link>
-          <Nav.Link href="#jobs" className="text-center mx-2">
-            <BriefcaseOutline color="#ffffff" height="24px" width="24px" />
-            <div>Lavoro</div>
-          </Nav.Link>
-          <Nav.Link href="#messaging" className="text-center mx-2">
-            <ChatbubbleEllipsesOutline
-              color="#ffffff"
-              height="24px"
-              width="24px"
-            />
-            <div>Messaggistica</div>
-          </Nav.Link>
-          <Nav.Link href="#notifications" className="text-center mx-2">
-            <NotificationsOutline color="#ffffff" height="24px" width="24px" />
-            <div>Notifiche</div>
-          </Nav.Link>
-
-          <NavDropdown title="Tu" id="user-dropdown" className="text-white">
-            <NavDropdown.Item href="#profile">Profilo</NavDropdown.Item>
-            <NavDropdown.Item href="#settings">Impostazioni</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#logout">Logout</NavDropdown.Item>
-          </NavDropdown>
-
-          <NavDropdown
-            title={<AppsOutline color="#ffffff" height="24px" width="24px" />}
-            id="apps-dropdown"
-            className="text-white"
+        {/* Nav Links */}
+        <Nav className="ml-auto d-flex align-items-center">
+          <Nav.Link
+            href="#"
+            className="text-light d-flex flex-column align-items-center mx-2"
           >
-            <NavDropdown.Item href="#app1">App 1</NavDropdown.Item>
-            <NavDropdown.Item href="#app2">App 2</NavDropdown.Item>
-            <NavDropdown.Item href="#app3">App 3</NavDropdown.Item>
-          </NavDropdown>
-
-          <Nav.Link href="#premium" className="text-warning mx-2">
-            Prova Premium per 0 EUR
+            <Home size={20} />
+            <small>Home</small>
           </Nav.Link>
+          <Nav.Link
+            href="#"
+            className="text-light d-flex flex-column align-items-center mx-2"
+          >
+            <Users size={20} />
+            <small>Rete</small>
+          </Nav.Link>
+          <Nav.Link
+            href="#"
+            className="text-light d-flex flex-column align-items-center mx-2"
+          >
+            <Briefcase size={20} />
+            <small>Lavoro</small>
+          </Nav.Link>
+          <Nav.Link
+            href="#"
+            className="text-light d-flex flex-column align-items-center mx-2"
+          >
+            <MessageSquare size={20} />
+            <small>Messaggi</small>
+          </Nav.Link>
+          <Nav.Link
+            href="#"
+            className="text-light d-flex flex-column align-items-center mx-2 position-relative"
+          >
+            <Bell size={20} />
+            <small>Notifiche</small>
+            <span
+              className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+              style={{ fontSize: "10px", padding: "3px 6px" }}
+            >
+              21
+            </span>
+          </Nav.Link>
+
+          {/* Dropdown for User */}
+          <Dropdown className="ml-2">
+            <Dropdown.Toggle
+              variant="link"
+              id="dropdown-user"
+              className="text-light d-flex flex-column align-items-center"
+            >
+              <img
+                src="https://via.placeholder.com/30"
+                width="30"
+                height="30"
+                className="rounded-circle"
+                alt="User"
+              />
+              <small className="ml-2">Tu</small> {/* 'Tu' below the image */}
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item href="#">Profilo</Dropdown.Item>
+              <Dropdown.Item href="#">Impostazioni</Dropdown.Item>
+              <Dropdown.Divider />
+              <Dropdown.Item href="#">Esci</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+
+          {/* Dropdown for Company */}
+          <Dropdown className="ml-3">
+            <Dropdown.Toggle
+              variant="link"
+              id="dropdown-company"
+              className="text-light d-flex flex-column align-items-center"
+            >
+              <Grid size={20} />
+              <small>Per le aziende</small>
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item href="#">Gestisci pagina</Dropdown.Item>
+              <Dropdown.Item href="#">Strumenti</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
         </Nav>
       </Container>
+
+      {/* Premium Offer */}
+      <div className="text-warning text-center" style={{ marginTop: "10px" }}>
+        <small>Prova Premium per</small>
+        <br />
+        <strong>0 EUR</strong>
+      </div>
     </Navbar>
   );
 };
 
-export default Navigation;*/
-}
+export default Navigation;
+

@@ -1,11 +1,10 @@
 import "./App.css";
-
-import RightSideNews from "./components/RightSideNews/RightSide.jsx";
+import { BasicLayout } from "./layouts/BasicLayout.jsx";
 
 export const App = () => {
   return (
     <>
-      <RightSideNews />
+      <BasicLayout />
     </>
   );
 };
