@@ -1,5 +1,4 @@
-import { Container, Form, Nav, Navbar, Dropdown } from "react-bootstrap";
-import { useState } from "react";
+import { Container, Form, Nav, Navbar } from "react-bootstrap";
 import {
   Search,
   Home,
@@ -7,13 +6,17 @@ import {
   Briefcase,
   MessageSquare,
   Bell,
-  Grid,
+  Linkedin,
 } from "lucide-react";
+import "./Navigation.css";
+import UserDropdown from "../UserDropdown/UserDropdown";
+import CompanyDropdown from "../CompanyDropdown/CompanyDropdown";
+import { useState } from "react";
 
 const Navigation = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const handleSearchChange = (e) => {
+  const handleInputChange = (e) => {
     setSearchTerm(e.target.value);
   };
 
@@ -24,136 +27,65 @@ const Navigation = () => {
       expand="lg"
       className="px-3 d-flex justify-content-center"
     >
-      <Container
-        className="d-flex justify-content-between align-items-center"
-        style={{ maxWidth: "800px" }}
-      >
-        {/* LinkedIn Icon */}
-        <Navbar.Brand href="#" className="d-flex align-items-center">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
-            width="30"
-            height="30"
-            className="d-inline-block align-top"
-            alt="LinkedIn"
-          />
+      <Container className="d-flex align-items-center">
+        <Navbar.Brand
+          href="#"
+          className="d-flex align-items-center navbar-brand"
+        >
+          <Linkedin />
         </Navbar.Brand>
 
-        {/* Search Form */}
-        <Form
-          inline="true"
-          className="d-flex align-items-center mx-3"
-          style={{ maxWidth: "300px" }}
-        >
+        <Form className="form-inline-flex">
           <Form.Control
             type="text"
             placeholder="Cerca"
-            className="ml-2"
-            style={{
-              border: "none",
-              background: "grey",
-              color: "white",
-              borderBottom: "1px solid #ccc",
-              width: "100%",
-            }}
+            className="form-control"
+            value={searchTerm}
+            onChange={handleInputChange}
           />
-          <Search className="text-muted text-dark" size={18} />
+          <Search className="search-icon" size={12} />
         </Form>
 
-        {/* Nav Links */}
         <Nav className="ml-auto d-flex align-items-center">
-          <Nav.Link
-            href="#"
-            className="text-light d-flex flex-column align-items-center mx-2"
-          >
+          <Nav.Link href="#" className="nav-link">
             <Home size={20} />
             <small>Home</small>
           </Nav.Link>
-          <Nav.Link
-            href="#"
-            className="text-light d-flex flex-column align-items-center mx-2"
-          >
+          <Nav.Link href="#" className="nav-link">
             <Users size={20} />
             <small>Rete</small>
           </Nav.Link>
-          <Nav.Link
-            href="#"
-            className="text-light d-flex flex-column align-items-center mx-2"
-          >
+          <Nav.Link href="#" className="nav-link">
             <Briefcase size={20} />
             <small>Lavoro</small>
           </Nav.Link>
-          <Nav.Link
-            href="#"
-            className="text-light d-flex flex-column align-items-center mx-2"
-          >
+          <Nav.Link href="#" className="nav-link">
             <MessageSquare size={20} />
             <small>Messaggi</small>
           </Nav.Link>
-          <Nav.Link
-            href="#"
-            className="text-light d-flex flex-column align-items-center mx-2 position-relative"
-          >
+
+          <Nav.Link href="#" className="nav-link position-relative">
             <Bell size={20} />
             <small>Notifiche</small>
-            <span
-              className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-              style={{ fontSize: "10px", padding: "3px 6px" }}
-            >
-              21
-            </span>
+            <span className="notification-badge">21</span>
           </Nav.Link>
 
-          {/* Dropdown for User */}
-          <Dropdown alignRight className="ml-2">
-            <Dropdown.Toggle
-              variant="link"
-              id="dropdown-user"
-              className="text-light d-flex flex-column align-items-center"
-            >
-              <img
-                src="https://via.placeholder.com/30"
-                width="30"
-                height="30"
-                className="rounded-circle"
-                alt="User"
-              />
-              <small className="ml-2">Tu</small> {/* 'Tu' below the image */}
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              <Dropdown.Item href="#">Profilo</Dropdown.Item>
-              <Dropdown.Item href="#">Impostazioni</Dropdown.Item>
-              <Dropdown.Divider />
-              <Dropdown.Item href="#">Esci</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
+          <UserDropdown />
 
-          {/* Dropdown for Company */}
-          <Dropdown alignRight className="ml-3">
-            <Dropdown.Toggle
-              variant="link"
-              id="dropdown-company"
-              className="text-light d-flex flex-column align-items-center"
-            >
-              <Grid size={20} />
-              <small>Per le aziende</small>
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              <Dropdown.Item href="#">Gestisci pagina</Dropdown.Item>
-              <Dropdown.Item href="#">Strumenti</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
+          <div className="user-dropdown-divider"></div>
+
+          <CompanyDropdown />
+
+          <div className="premium-offer">
+            <small>Prova Premium per</small>
+            <br />
+            <strong>0 EUR</strong>
+          </div>
         </Nav>
       </Container>
-
-      {/* Premium Offer */}
-      <div className="text-warning text-center" style={{ marginTop: "10px" }}>
-        <small>Prova Premium per</small>
-        <br />
-        <strong>0 EUR</strong>
-      </div>
     </Navbar>
   );
 };
 
 export default Navigation;
+

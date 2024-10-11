@@ -52,5 +52,3 @@ const PostBox = () => {
     </>
   );
 };
-
-export default PostBox;
