@@ -44,7 +44,7 @@ jobs:
       - name: Commit and push formatted code
         if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/main')
         run: |
-          git config --global user.name '@MarcoBot'
+          git config --global user.name 'MarcoBot'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add .
           git commit -m 'format code by @MarcoBot'
