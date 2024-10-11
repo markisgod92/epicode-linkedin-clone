@@ -26,7 +26,7 @@ const Navigation = () => {
       expand="lg"
       className="px-3 d-flex justify-content-center"
     >
-      <Container className="d-flex justify-content-between align-items-center">
+      <Container className="d-flex align-items-center">
         <Navbar.Brand
           href="#"
           className="d-flex align-items-center navbar-brand"
