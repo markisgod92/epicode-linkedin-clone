@@ -6,6 +6,7 @@ import {
   Briefcase,
   MessageSquare,
   Bell,
+  Linkedin,
 } from "lucide-react";
 import "./Navigation.css";
 import UserDropdown from "../UserDropdown/UserDropdown";
@@ -31,11 +32,7 @@ const Navigation = () => {
           href="#"
           className="d-flex align-items-center navbar-brand"
         >
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
-            className="d-inline-block align-top"
-            alt="LinkedIn"
-          />
+          <Linkedin />
         </Navbar.Brand>
 
         <Form className="form-inline-flex">
