@@ -1,101 +1,86 @@
-import { Container, Form, Nav, Navbar, NavDropdown } from "react-bootstrap";
-import { useState } from "react";
+import { Container, Form, Nav, Navbar } from "react-bootstrap";
 import {
-  LogoLinkedin,
-  HomeOutline,
-  PeopleOutline,
-  BriefcaseOutline,
-  ChatbubbleEllipsesOutline,
-  NotificationsOutline,
-  AppsOutline,
-} from "react-ionicons";
+  Search,
+  Home,
+  Users,
+  Briefcase,
+  MessageSquare,
+  Bell,
+  Linkedin,
+} from "lucide-react";
+import "./Navigation.css";
+import UserDropdown from "../UserDropdown/UserDropdown";
+import CompanyDropdown from "../CompanyDropdown/CompanyDropdown";
+import { useState } from "react";
 
 const Navigation = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const handleSearchChange = (e) => {
+  const handleInputChange = (e) => {
     setSearchTerm(e.target.value);
   };
 
   return (
     <Navbar
-      data-testid="nav"
       bg="dark"
       variant="dark"
-      className="d-flex justify-content-between sticky-top"
+      expand="lg"
+      className="px-3 d-flex justify-content-center"
     >
-      <Container>
-        <Navbar.Brand href="/">
-          <LogoLinkedin
-            color="#ffffff"
-            title="LinkedIn"
-            height="30px"
-            width="30px"
-            data-testid="linkedin-icon"
-          />
+      <Container className="d-flex align-items-center">
+        <Navbar.Brand
+          href="#"
+          className="d-flex align-items-center navbar-brand"
+        >
+          <Linkedin />
         </Navbar.Brand>
 
-        <Form className="d-inline-flex flex-grow-1 mx-1">
+        <Form className="form-inline-flex">
           <Form.Control
             type="text"
             placeholder="Cerca"
+            className="form-control"
             value={searchTerm}
-            onChange={handleSearchChange}
-            style={{
-              backgroundColor: "#333",
-              borderColor: "#666",
-              color: "#fff",
-              width: "75%",
-            }}
+            onChange={handleInputChange}
           />
+          <Search className="search-icon" size={12} />
         </Form>
 
-        <Nav className="ms-auto d-flex align-items-center">
-          <Nav.Link href="#home" className="text-center mx-2">
-            <HomeOutline color="#ffffff" height="24px" width="24px" />
-            <div>Home</div>
+        <Nav className="ml-auto d-flex align-items-center">
+          <Nav.Link href="#" className="nav-link">
+            <Home size={20} />
+            <small>Home</small>
           </Nav.Link>
-          <Nav.Link href="#network" className="text-center mx-2">
-            <PeopleOutline color="#ffffff" height="24px" width="24px" />
-            <div>Rete</div>
+          <Nav.Link href="#" className="nav-link">
+            <Users size={20} />
+            <small>Rete</small>
           </Nav.Link>
-          <Nav.Link href="#jobs" className="text-center mx-2">
-            <BriefcaseOutline color="#ffffff" height="24px" width="24px" />
-            <div>Lavoro</div>
+          <Nav.Link href="#" className="nav-link">
+            <Briefcase size={20} />
+            <small>Lavoro</small>
           </Nav.Link>
-          <Nav.Link href="#messaging" className="text-center mx-2">
-            <ChatbubbleEllipsesOutline
-              color="#ffffff"
-              height="24px"
-              width="24px"
-            />
-            <div>Messaggistica</div>
-          </Nav.Link>
-          <Nav.Link href="#notifications" className="text-center mx-2">
-            <NotificationsOutline color="#ffffff" height="24px" width="24px" />
-            <div>Notifiche</div>
+          <Nav.Link href="#" className="nav-link">
+            <MessageSquare size={20} />
+            <small>Messaggi</small>
           </Nav.Link>
 
-          <NavDropdown title="Tu" id="user-dropdown" className="text-white">
-            <NavDropdown.Item href="#profile">Profilo</NavDropdown.Item>
-            <NavDropdown.Item href="#settings">Impostazioni</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#logout">Logout</NavDropdown.Item>
-          </NavDropdown>
-
-          <NavDropdown
-            title={<AppsOutline color="#ffffff" height="24px" width="24px" />}
-            id="apps-dropdown"
-            className="text-white"
-          >
-            <NavDropdown.Item href="#app1">App 1</NavDropdown.Item>
-            <NavDropdown.Item href="#app2">App 2</NavDropdown.Item>
-            <NavDropdown.Item href="#app3">App 3</NavDropdown.Item>
-          </NavDropdown>
-
-          <Nav.Link href="#premium" className="text-warning mx-2">
-            Prova Premium per 0 EUR
+          <Nav.Link href="#" className="nav-link position-relative">
+            <Bell size={20} />
+            <small>Notifiche</small>
+            <span className="notification-badge">21</span>
           </Nav.Link>
+
+          <UserDropdown />
+
+          <div className="user-dropdown-divider"></div>
+
+          <CompanyDropdown />
+
+          <div className="premium-offer">
+            <small>Prova Premium per</small>
+            <br />
+            <strong>0 EUR</strong>
+          </div>
         </Nav>
       </Container>
     </Navbar>
@@ -103,3 +88,4 @@ const Navigation = () => {
 };
 
 export default Navigation;
+
